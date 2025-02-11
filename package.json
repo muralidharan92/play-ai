@@ -1,0 +1,58 @@
+{
+  "name": "play-ai",
+  "version": "1.0.0",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "test": "playwright test"
+  },
+  "keywords": [
+    "openai",
+    "playwright",
+    "automation",
+    "testing",
+    "AI",
+    "end-to-end testing",
+    "play-ai",
+    "playai",
+    "PlayAI"
+  ],
+  "author": "muralidharan92",
+  "license": "MIT",
+  "description": "Automate Playwright tests using OpenAI integration",
+  "release": {
+    "branches": [
+      "main"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/muralidharan92/play-ai-example"
+  },
+  "bugs": {
+    "url": "https://github.com/muralidharan92/play-ai-example/issues"
+  },
+  "homepage": "https://github.com/muralidharan92/play-ai-example#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.50.1",
+    "@types/node": "^22.13.1",
+    "dotenv": "^16.4.7",
+    "ts-node": "^10.9.2",
+    "tsup": "^8.3.6",
+    "typescript": "^5.7.3"
+  },
+  "dependencies": {
+    "@types/sanitize-html": "^2.13.0",
+    "openai": "^4.17.3",
+    "sanitize-html": "^2.11.0",
+    "zod": "^3.22.4"
+  },
+  "peerDependencies": {
+    "@playwright/test": "^1.50.1"
+  }
+}
