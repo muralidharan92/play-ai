@@ -14,6 +14,10 @@ jobs:
         with:
           node-version: lts/*
       - name: Use variables
+        run: |
+          echo "OPENAI_API_KEY variable : $OPENAI_API_KEY"
+          echo "PLAY_AI_DEBUG variable : $PLAY_AI_DEBUG"
+          echo "MAX_TASK_CHARS variable : $MAX_TASK_CHARS"
         env:
           OPENAI_API_KEY: ${{ vars.OPENAI_API_KEY }}
           PLAY_AI_DEBUG: ${{ vars.PLAY_AI_DEBUG }}
