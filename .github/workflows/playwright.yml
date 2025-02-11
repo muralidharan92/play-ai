@@ -16,8 +16,8 @@ jobs:
       - shell: pwsh
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-          run: |
-            export "OPENAI_API_KEY=$env:OPENAI_API_KEY"
+        run: |
+          export "OPENAI_API_KEY=$env:OPENAI_API_KEY"
       - name: Use variables
         env:
           # OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
