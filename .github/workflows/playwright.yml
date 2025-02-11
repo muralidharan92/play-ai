@@ -4,6 +4,12 @@ on:
     branches: [main, master]
   pull_request:
     branches: [main, master]
+env:
+  # Setting an environment variable with the value of a configuration variable
+  OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+  PLAY_AI_DEBUG: ${{ vars.PLAY_AI_DEBUG }}
+  MAX_TASK_CHARS: ${{ vars.MAX_TASK_CHARS }}
+
 jobs:
   test:
     timeout-minutes: 60
