@@ -13,13 +13,18 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: lts/*
-      - name: Use variables
+      - shell: pwsh
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          run: |
+            export "OPENAI_API_KEY=$env:OPENAI_API_KEY"
+      - name: Use variables
+        env:
+          # OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           PLAY_AI_DEBUG: ${{ vars.PLAY_AI_DEBUG }}
           MAX_TASK_CHARS: ${{ vars.MAX_TASK_CHARS }}
         run: |
-          export "OPENAI_API_KEY=$OPENAI_API_KEY"
+          # export "OPENAI_API_KEY=$OPENAI_API_KEY"
           export "PLAY_AI_DEBUG=$PLAY_AI_DEBUG"
           export "MAX_TASK_CHARS=$MAX_TASK_CHARS"
       - name: Install dependencies
