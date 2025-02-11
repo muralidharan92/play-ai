@@ -19,7 +19,7 @@ jobs:
           echo "PLAY_AI_DEBUG variable : $PLAY_AI_DEBUG"
           echo "MAX_TASK_CHARS variable : $MAX_TASK_CHARS"
         env:
-          OPENAI_API_KEY: ${{ vars.OPENAI_API_KEY }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           PLAY_AI_DEBUG: ${{ vars.PLAY_AI_DEBUG }}
           MAX_TASK_CHARS: ${{ vars.MAX_TASK_CHARS }}
       - name: Install dependencies
