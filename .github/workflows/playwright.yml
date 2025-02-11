@@ -19,9 +19,9 @@ jobs:
           PLAY_AI_DEBUG: ${{ vars.PLAY_AI_DEBUG }}
           MAX_TASK_CHARS: ${{ vars.MAX_TASK_CHARS }}
         run: |
-          echo "$OPENAI_API_KEY"
-          echo "$PLAY_AI_DEBUG"
-          echo "$MAX_TASK_CHARS"
+          echo "OPENAI_API_KEY=$OPENAI_API_KEY"
+          echo "PLAY_AI_DEBUG=$PLAY_AI_DEBUG"
+          echo "MAX_TASK_CHARS=$MAX_TASK_CHARS"
       - name: Install dependencies
         run: npm ci
       - name: Install Playwright Browsers
