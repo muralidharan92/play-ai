@@ -19,15 +19,6 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: lts/*
-      - name: Use variables
-        env:
-          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-          PLAY_AI_DEBUG: ${{ vars.PLAY_AI_DEBUG }}
-          MAX_TASK_CHARS: ${{ vars.MAX_TASK_CHARS }}
-        run: |
-          echo "OPENAI_API_KEY=$OPENAI_API_KEY"
-          echo "PLAY_AI_DEBUG=$PLAY_AI_DEBUG"
-          echo "MAX_TASK_CHARS=$MAX_TASK_CHARS"
       - name: Install dependencies
         run: npm ci
       - name: Install Playwright Browsers
