@@ -15,8 +15,6 @@ test.describe("Playwright Integration With AI Suite", () => {
   });
 
   test("PW With AI Test", async ({ page }) => {
-    // await page.goto("https://www.saucedemo.com/");
-
     await play(
       `Type "standard_user" in the Username field`,
       { page, test },
