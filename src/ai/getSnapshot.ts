@@ -4,7 +4,7 @@ import { Page } from "./types";
 /**
  * Captures a snapshot of the current state of the Playwright `page`.
  *
- * This function retrieves the HTML content of the provided `page`, sanitizes it to remove any potentially harmful content, 
+ * This function retrieves the HTML content of the provided `page`, sanitizes it to remove any potentially harmful content,
  * and returns an object containing the sanitized DOM string.
  *
  * @param page - The Playwright `page` object from which the snapshot will be taken.
@@ -20,7 +20,7 @@ import { Page } from "./types";
  * ```
  */
 export const getSnapshot = async (page: Page) => {
-  return {
-    dom: sanitizeHtmlString(await page.content()),
-  };
+    return {
+        dom: sanitizeHtmlString(await page.content())
+    };
 };

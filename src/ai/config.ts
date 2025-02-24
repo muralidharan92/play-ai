@@ -12,7 +12,7 @@ const char_count = process.env.MAX_TASK_CHARS || "2000";
  * @example
  * ```typescript
  * import { MAX_TASK_CHARS } from "./config";
- * 
+ *
  * console.log(MAX_TASK_CHARS); // Outputs the maximum number of characters allowed for a task, e.g., 2000
  * ```
  */

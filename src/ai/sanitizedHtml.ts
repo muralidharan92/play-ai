@@ -17,18 +17,18 @@ import sanitizeHtml from "sanitize-html";
  * ```
  */
 export const sanitizeHtmlString = (subject: string): string => {
-  return sanitizeHtml(subject, {
-    allowedTags: sanitizeHtml.defaults.allowedTags.concat([
-      "button",
-      "input",
-      "select",
-      "option",
-      "textarea",
-      "form",
-      "img",
-      "label",
-      "span",
-    ]),
-    allowedAttributes: false,
-  });
+    return sanitizeHtml(subject, {
+        allowedTags: sanitizeHtml.defaults.allowedTags.concat([
+            "button",
+            "input",
+            "select",
+            "option",
+            "textarea",
+            "form",
+            "img",
+            "label",
+            "span"
+        ]),
+        allowedAttributes: false
+    });
 };

@@ -31,7 +31,7 @@ import { TaskMessage } from "./types";
  * ```
  */
 export const prompt = (message: TaskMessage): string => {
-  return `This is your task: ${message.task}
+    return `This is your task: ${message.task}
 
 * When creating CSS selectors, ensure they are unique and specific enough to select only one element, even if there are multiple elements of the same type (like multiple h1 elements).
 * Avoid using generic tags like 'h1' alone. Instead, combine them with other attributes or structural relationships to form a unique selector.

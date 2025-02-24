@@ -33,34 +33,22 @@ dotenv.config();
 const options = undefined;
 
 test.describe("Playwright AI Integration", () => {
-  test.beforeEach(async ({ page }) => {
-    await page.goto("https://www.saucedemo.com/");
-  });
+    test.beforeEach(async ({ page }) => {
+        await page.goto("https://www.saucedemo.com/");
+    });
 
-  test.afterEach(async ({ page }) => {
-    await page.close();
-  });
+    test.afterEach(async ({ page }) => {
+        await page.close();
+    });
 
-  test("AI-Powered Playwright Test", async ({ page }) => {
-    await play(
-      "Type 'standard_user' in the Username field",
-      { page, test },
-      options
-    );
-    await play(
-      "Type 'secret_sauce' in the Password field",
-      { page, test },
-      options
-    );
-    await play("Click the Login button", { page, test }, options);
+    test("AI-Powered Playwright Test", async ({ page }) => {
+        await play("Type 'standard_user' in the Username field", { page, test }, options);
+        await play("Type 'secret_sauce' in the Password field", { page, test }, options);
+        await play("Click the Login button", { page, test }, options);
 
-    const headerText = await play(
-      "Retrieve the header logo text",
-      { page, test },
-      options
-    );
-    expect(headerText).toBe("Swag Labs");
-  });
+        const headerText = await play("Retrieve the header logo text", { page, test }, options);
+        expect(headerText).toBe("Swag Labs");
+    });
 });
 ```
 
@@ -75,40 +63,36 @@ const options = undefined;
 dotenv.config();
 
 test.describe("Playwright Integration With AI Suite", () => {
-  test.beforeEach(async ({ page }) => {
-    await page.goto("https://www.saucedemo.com/");
-  });
+    test.beforeEach(async ({ page }) => {
+        await page.goto("https://www.saucedemo.com/");
+    });
 
-  test.afterEach(async ({ page }) => {
-    await page.close();
-  });
+    test.afterEach(async ({ page }) => {
+        await page.close();
+    });
 
-  test("PW With AI Test With Nested Task", async ({ page }) => {
-    await play(
-      [
-        `Type "standard_user" in the Username field`,
-        `Type "secret_sauce" in the Password field`,
-        `Click the Login button`,
-      ],
-      { page, test },
-      options
-    );
+    test("PW With AI Test With Nested Task", async ({ page }) => {
+        await play(
+            [
+                `Type "standard_user" in the Username field`,
+                `Type "secret_sauce" in the Password field`,
+                `Click the Login button`,
+            ],
+            { page, test },
+            options,
+        );
 
-    const headerLabelText = await play(
-      "get the header logo label text",
-      { page, test },
-      options
-    );
+        const headerLabelText = await play("get the header logo label text", { page, test }, options);
 
-    expect(headerLabelText).toBe("Swag Labs");
+        expect(headerLabelText).toBe("Swag Labs");
 
-    const firstLinkText = await play(
-      "get the first inventory item name from inventory list",
-      { page, test },
-      options
-    );
-    expect(firstLinkText).toBe("Sauce Labs Backpack");
-  });
+        const firstLinkText = await play(
+            "get the first inventory item name from inventory list",
+            { page, test },
+            options,
+        );
+        expect(firstLinkText).toBe("Sauce Labs Backpack");
+    });
 });
 ```
 
@@ -142,9 +126,9 @@ Play AI supports all Playwright-compatible browsers.
 
 ```ts
 const options = {
-  debug: true,
-  model: "gpt-4O",
-  openaiApiKey: "sk-...",
+    debug: true,
+    model: "gpt-4O",
+    openaiApiKey: "sk-...",
 };
 ```
 
@@ -206,14 +190,183 @@ Play AI is free, but OpenAI API calls may incur costs. See OpenAI’s [pricing](
 | Provides fixtures                                                                     | ✅ Yes  | ❌ No           | ✅ Yes    |
 | License                                                                               | MIT     | MIT             | MIT       |
 
----
+## Collaborator Instructions
+
+We welcome contributions from the community! Here are some guidelines to help you get started:
+
+### Getting Started
+
+1. **Fork the Repository**: Click the "Fork" button at the top right of this repository to create a copy of the repository in your GitHub account.
+
+2. **Clone the Repository**: Clone the forked repository to your local machine using the following command:
+
+    ```bash
+    git clone https://github.com/<your-username>/play-ai.git
+    ```
+
+3. **Install Dependencies**: Navigate to the project directory and install the required dependencies:
+    ```bash
+    cd play-ai
+    npm install
+    ```
+4. **Set Up Environment Variables**: Create a .env file in the root directory and add your OpenAI API key:
+    ```bash
+    echo "OPENAI_API_KEY='sk-...'" > .env
+    ```
+
+### Running Tests
+
+Before making any changes, ensure that the existing tests pass. You can run the tests using the following command:
+
+```bash
+npm test
+```
+
+### Making Changes
+
+1. **Create a New Branch**: Create a new branch for your feature or bug fix:
+
+```bash
+git checkout -b feature/your-feature-name
+```
+
+2. **Make Your Changes**: Implement your feature or bug fix.
+
+3. **Run Tests**: Ensure that all tests pass after your changes:
+
+```bash
+npm test
+```
+
+4. **Commit Your Changes**: Commit your changes with a descriptive commit message:
+
+```bash
+git add .
+git commit -m "Add feature: your feature description"
+```
+
+5. **Push to Your Fork**: Push your changes to your forked repository:
+
+```bash
+git push origin feature/your-feature-name
+```
+
+6. **Create a Pull Request**: Go to the original repository and create a pull request from your forked repository. Provide a clear description of your changes and any relevant information.
+
+### Code Style
+
+Please follow the existing code style and conventions. We use [Prettier](Sure! Here is a section for collaborator instructions that you can add to your README.md file:
+
+````markdown
+## Collaborator Instructions
+
+We welcome contributions from the community! Here are some guidelines to help you get started:
+
+### Getting Started
+
+1. **Fork the Repository**: Click the "Fork" button at the top right of this repository to create a copy of the repository in your GitHub account.
+
+2. **Clone the Repository**: Clone the forked repository to your local machine using the following command:
+    ```bash
+    git clone https://github.com/<your-username>/play-ai.git
+    ```
+````
+
+3. **Install Dependencies**: Navigate to the project directory and install the required dependencies:
+
+    ```bash
+    cd play-ai
+    npm install
+    ```
+
+4. **Set Up Environment Variables**: Create a .env file in the root directory and add your OpenAI API key:
+    ```bash
+    echo "OPENAI_API_KEY='sk-...'" > .env
+    ```
+
+### Running Tests
+
+Before making any changes, ensure that the existing tests pass. You can run the tests using the following command:
+
+```bash
+npm test
+```
+
+### Making Changes
+
+1. **Create a New Branch**: Create a new branch for your feature or bug fix:
+
+    ```bash
+    git checkout -b feature/your-feature-name
+    ```
+
+2. **Make Your Changes**: Implement your feature or bug fix.
+
+3. **Run Tests**: Ensure that all tests pass after your changes:
+
+    ```bash
+    npm test
+    ```
+
+4. **Commit Your Changes**: Commit your changes with a descriptive commit message:
+
+    ```bash
+    git add .
+    git commit -m "Add feature: your feature description"
+    ```
+
+5. **Push to Your Fork**: Push your changes to your forked repository:
+
+    ```bash
+    git push origin feature/your-feature-name
+    ```
+
+6. **Create a Pull Request**: Go to the original repository and create a pull request from your forked repository. Provide a clear description of your changes and any relevant information.
+
+### Code Style
+
+Please follow the existing code style and conventions. We use [Prettier](https://prettier.io/) for code formatting. You can format your code using the following command:
+
+```bash
+npm run format
+```
+
+### Reporting Issues
+
+If you find any bugs or have feature requests, please open an issue on GitHub. Provide as much detail as possible to help us understand and address the issue.
+
+### Contact
+
+If you have any questions or need further assistance, feel free to reach out to the project maintainers.
+
+Thank you for contributing to Play AI! 🚀
+
+````
+
+This section provides clear instructions for collaborators on how to get started, make changes, run tests, and create pull requests. It also includes guidelines for code style and reporting issues.
+This section provides clear instructions for collaborators on how to get started, make changes, run tests, and create pull requests. It also includes guidelines for code style and reporting issues.) for code formatting. You can format your code using the following command:
+
+```bash
+npm run format
+````
+
+### Reporting Issues
+
+If you find any bugs or have feature requests, please open an issue on GitHub. Provide as much detail as possible to help us understand and address the issue.
+
+### Contact
+
+If you have any questions or need further assistance, feel free to reach out to the project maintainers.
+
+## Thank you for contributing to Play AI! 🚀
 
 Play AI simplifies Playwright automation using natural language commands, making test creation faster and more intuitive. 🚀
 
 <details>
-  <summary>Play-AI License</summary>
+  <summary><strong>Play-AI License</strong></summary>
 
 ```
+
 MIT License
 
 Copyright (c) 2025 Muralidharan Rajendran (muralidharan92)

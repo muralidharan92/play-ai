@@ -10,15 +10,15 @@
  * @extends {Error}
  */
 export abstract class PlayAIError extends Error {
-  /**
-   * Creates an instance of PlayAIError.
-   *
-   * @param {string} [message] - The error message.
-   */
-  public constructor(message?: string) {
-    super(message);
-    this.name = new.target.name;
-  }
+    /**
+     * Creates an instance of PlayAIError.
+     *
+     * @param {string} [message] - The error message.
+     */
+    public constructor(message?: string) {
+        super(message);
+        this.name = new.target.name;
+    }
 }
 
 /**
@@ -32,12 +32,12 @@ export abstract class PlayAIError extends Error {
  * @extends {PlayAIError}
  */
 export class UnimplementedError extends PlayAIError {
-  /**
-   * Creates an instance of UnimplementedError.
-   *
-   * @param {string} [message] - The error message. If not provided, a default message "This feature is not yet implemented." is used.
-   */
-  public constructor(message?: string) {
-    super(message || "This feature is not yet implemented.");
-  }
+    /**
+     * Creates an instance of UnimplementedError.
+     *
+     * @param {string} [message] - The error message. If not provided, a default message "This feature is not yet implemented." is used.
+     */
+    public constructor(message?: string) {
+        super(message || "This feature is not yet implemented.");
+    }
 }
