@@ -32,12 +32,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/muralidharan92/play-ai-example.git"
+    "url": "git+https://github.com/muralidharan92/play-ai.git"
   },
   "bugs": {
-    "url": "https://github.com/muralidharan92/play-ai-example/issues"
+    "url": "https://github.com/muralidharan92/play-ai/issues"
   },
-  "homepage": "https://github.com/muralidharan92/play-ai-example#readme",
+  "homepage": "https://github.com/muralidharan92/play-ai#readme",
   "devDependencies": {
     "@playwright/test": "^1.50.1",
     "@types/node": "^22.13.1",

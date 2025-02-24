@@ -7,10 +7,33 @@ const defaultDebug = process.env.PLAY_AI_DEBUG === "true";
 
 /**
  * Completes a task using OpenAI's API and Playwright.
- * @param {Page} page - The Playwright Page object.
- * @param {TaskMessage} task - The task message containing task details and options.
- * @returns {Promise<TaskResult>} A promise that resolves to the task result.
+ *
+ * This function integrates OpenAI's API with Playwright to complete a given task. It sends a prompt to OpenAI, executes the
+ * actions on the Playwright `page`, and returns the result of the task execution.
+ *
+ * @param page - The Playwright `Page` object where the task will be executed.
+ * @param task - The task message containing task details and options.
+ * @returns A promise that resolves to the task result.
  * @throws Will throw an error if no function result is found.
+ *
+ * @example
+ * ```typescript
+ * import { completeTask } from "./completeTask";
+ * import { Page } from "playwright";
+ *
+ * const page: Page = ...; // Initialize Playwright page
+ * const taskMessage = {
+ *   task: "Type 'standard_user' in the Username field",
+ *   options: {
+ *     openaiApiKey: "sk-...",
+ *     model: "gpt-4o",
+ *     debug: true,
+ *   },
+ * };
+ *
+ * const result = await completeTask(page, taskMessage);
+ * console.log(result); // Logs the result of the task execution
+ * ```
  */
 export const completeTask = async (
   page: Page,

@@ -3,11 +3,28 @@ import { randomUUID } from "crypto";
 import { RunnableFunctionWithParse } from "openai/lib/RunnableFunction";
 import { z } from "zod";
 
+/**
+ * Creates a set of actions that can be performed on a Playwright `page`.
+ *
+ * This function generates a record of actions that can be executed on a Playwright `page`. Each action is represented as a
+ * `RunnableFunctionWithParse` object, which includes the function to be executed, a description, and a schema for parsing
+ * the function's arguments.
+ *
+ * @param {Page} page - The Playwright `page` object where the actions will be performed.
+ * @returns {Record<string, RunnableFunctionWithParse<any>>} - A record of actions that can be performed on the page.
+ */
 export const createActions = (
   page: Page
 ): Record<string, RunnableFunctionWithParse<any>> => {
   const locatorMap = new Map();
 
+  /**
+   * Retrieves a locator from the locator map using the provided element ID.
+   *
+   * @param {string} elementId - The ID of the element to locate.
+   * @returns {Locator} - The Playwright `Locator` object for the specified element.
+   * @throws {Error} - Throws an error if the element ID is not found in the locator map.
+   */
   const getLocator = (elementId: string): Locator => {
     console.log("locatorMap", locatorMap);
     const locator: Locator = locatorMap.get(elementId);
@@ -20,11 +37,10 @@ export const createActions = (
   };
 
   /**
-   * scroll into the view of the element
+   * Scrolls the page to bring the specified element into view.
    *
-   * @export
-   * @param Locator
-   * @return {*}
+   * @param {Locator} locator - The Playwright `Locator` object for the element to scroll into view.
+   * @returns {Promise<void>}
    */
   const scrollIntoView = async (locator: Locator) => {
     let i = 0;
@@ -40,6 +56,11 @@ export const createActions = (
     }
   };
 
+  /**
+   * Waits for the page to load completely.
+   *
+   * @returns {Promise<void>}
+   */
   const waitForPageLoad = async () => {
     await page.waitForLoadState("domcontentloaded", { timeout: 30000 });
   };

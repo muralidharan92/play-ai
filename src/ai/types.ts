@@ -6,6 +6,7 @@ export type Test = TestType<any, any>;
 
 /**
  * Options for configuring a step.
+ * 
  * @typedef {Object} StepOptions
  * @property {boolean} [debug] - Whether to enable debug mode.
  * @property {string} [model] - The model to use.
@@ -25,6 +26,7 @@ export type StepOptions = {
 
 /**
  * Message for a task.
+ * 
  * @typedef {Object} TaskMessage
  * @property {string} task - The task description.
  * @property {Object} snapshot - The snapshot of the DOM.
@@ -41,6 +43,7 @@ export type TaskMessage = {
 
 /**
  * Result of a task.
+ * 
  * @typedef {Object} TaskResult
  * @property {boolean} [assertion] - The result of an assertion.
  * @property {string} [query] - The query string.
