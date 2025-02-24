@@ -176,6 +176,13 @@ const options = {
 - `locator.isEnabled`
 - `locator.isVisible`
 - `locator.uncheck`
+- `locator.dblclick`
+- `locator.scrollIntoView`
+- `locator.scrollIntoViewIfNeeded`
+- `locator.hover`
+- `locator.waitForPageLoad`
+- `locator.expectToBe`
+- `locator.expectNotToBe`
 
 ## Pricing
 
